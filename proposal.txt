@@ -1,0 +1,10 @@
+DATA 533 Lab 2 Proposal
+Eric Baxter & Aditya Saluja
+
+We propose a package to work with graphs and trees.
+
+The tree sub-package consists of two modules: BinaryTree and BinarySearchTree. The first module consists of two classes Node and BinaryTree. The BinaryTree class contains the following utility functions: create_node, insert_node, search_node and delete_node. Additionally, the class contains a traversal function that allows the user to print all nodes in a tree in pre-order, in-order or post-order. The second module inherits, all methods from BinaryTree. In addition this module contains a function is_BST to ensure that each parent has at most two child nodes and the left subtree of a node contains values lesser than that of the parent node, while the right subtree contains values that are greater. The search function will also be modified to implement binary search algorithm to reduce the time complexity.
+
+In the graphs subpackage, there will be a module for unweighted graphs and another for weighted graphs. 
+In the unweighted graph module, we will implement a function for DFS, a function which checks for cycles, and a function which checks whether the graph is connected.
+In the weighted graph module, we will implement Kruskals algorithm and Prims algorithm for minimum spanning trees. It will  inherit from the unweighted graph module.
