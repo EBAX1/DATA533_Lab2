@@ -2,6 +2,7 @@
 #Weights to edges in index-wise fashion
 import numpy as np
 import pandas as pd
+import copy
 
 import graphsTrees.graphs.graphs as gr
 
@@ -27,23 +28,24 @@ class wtGraph(gr.Graph):
     # I couldn't figure this out, and the code doesn't work when the graph has cycles.
     # Using the hasCycles method in a loop proved too much for my brain 
     def kruskal(self):
-        vertices = self.vertices
-        kruskEdges = self.edges
-        kruskWeights = self.weights
+        kruskVertices = copy.copy(self.vertices)
+        # Python pointers strike again! Code was broken for like a day before I remembered copy.copy
+        kruskEdges = copy.copy(self.edges)
+        kruskWeights = copy.copy(self.weights)
         tree = []
         if self.isConnected() == True:
-            while len(tree) < len(vertices) - 2:
+            while len(tree) < len(kruskVertices) - 2:
                 #This is a horrible way of  using the index from the weights list in the edges list
                 #If adding the edge makes a cycle, just remove it. else, add to tree
-                if wtGraph(len(vertices), tree + [edges[weights.index(min(weights))]], weights).hasCycles():
-                    edges.remove(edges[weights.index(min(weights))])
-                    weights.remove(min(weights))
+                if wtGraph(len(kruskVertices), tree + [kruskEdges[kruskWeights.index(min(kruskWeights))]], kruskWeights).hasCycles():
+                    kruskEdges.remove(kruskEdges[kruskWeights.index(min(kruskWeights))])
+                    kruskWeights.remove(min(kruskWeights))
                 else:
-                    tree.append(edges[weights.index(min(weights))])
-                    edges.remove(edges[weights.index(min(weights))])
-                    weights.remove(min(weights))
+                    tree.append(kruskEdges[kruskWeights.index(min(kruskWeights))])
+                    kruskEdges.remove(kruskEdges[kruskWeights.index(min(kruskWeights))])
+                    kruskWeights.remove(min(kruskWeights))
             #This adds the last edge
-            tree.append(edges[weights.index(min(weights))])
+            tree.append(kruskEdges[kruskWeights.index(min(kruskWeights))])
             return tree
         else:
             print('Graph is disconnected, and there is no spanning tree')
