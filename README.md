@@ -20,14 +20,14 @@ addEdge
 - Example: G.addEdge(0,2) adds edge from vertex 0 to vertex 2
 
 addVertex
--Input: None
+- Input: None
 - Adds a vertex n to a graph of size n
--Example: G.addVertex(). If G has 4 vertices [0,1,2,3] will add vertex labelled 4
+- Example: G.addVertex(). If G has 4 vertices [0,1,2,3] will add vertex labelled 4
 
 rmEdge
 - Input: integers i,j
 - Removes the edge between vetex i and vertex j
--Example: G.rmEdge(0,1) removes edge between vertex 0 and vertex 1
+- Example: G.rmEdge(0,1) removes edge between vertex 0 and vertex 1
 
 printGraph
 - Input: None
@@ -38,8 +38,8 @@ adjMatrix
 - Returns the adjacency matrix of the graph
 
 DFS
--Input: integer i
--Performs a depth first search on the graph starting from vertex i
+- Input: integer i
+- Performs a depth first search on the graph starting from vertex i
 
 isConnected
 - Input: None
