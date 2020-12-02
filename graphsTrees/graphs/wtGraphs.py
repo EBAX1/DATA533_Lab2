@@ -25,8 +25,7 @@ class wtGraph(gr.Graph):
             matrix[edge[1]][edge[0]] = self.weights[self.edges.index(edge)]
         return matrix
     
-    # I couldn't figure this out, and the code doesn't work when the graph has cycles.
-    # Using the hasCycles method in a loop proved too much for my brain 
+
     def kruskal(self):
         kruskVertices = copy.copy(self.vertices)
         # Python pointers strike again! Code was broken for like a day before I remembered copy.copy
