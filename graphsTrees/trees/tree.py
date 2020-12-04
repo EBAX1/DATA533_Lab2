@@ -12,6 +12,14 @@ class Tree:
             node.left = self.insert(node.left, key)
         return node
     
+    def search_node(self,node,key):
+        if node is None:
+            return "This node does not exist"
+        if node.key == key:
+            return "Node {} exists".format(key)
+        else:
+            return self.search_node(node.left,key)
+    
     def inorder(self,node):
         if node is not None:
             self.inorder(node.left)

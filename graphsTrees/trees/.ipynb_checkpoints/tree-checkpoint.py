@@ -1,8 +1,5 @@
-class Node:
-    def __init__(self, key):
-        self.key    = key
-        self.left   = None 
-        self.right  = None   
+from node import Node
+
 class Tree:
    
     def create_node(self,key):
@@ -14,6 +11,14 @@ class Tree:
         else:
             node.left = self.insert(node.left, key)
         return node
+    
+    def search_node(self,node,key):
+        if node is None:
+            return "This node does not exist"
+        if node.key == key:
+            return "Node {} exists".format(key)
+        else:
+            return self.search_node(node.left,key)
     
     def inorder(self,node):
         if node is not None:

@@ -2,6 +2,19 @@ from node import Node
 from tree import Tree
 
 class BST(Tree):
+    
+    def create_node(self,key):
+        return Node(key)
+    
+    def insert(self, node, key):
+        if node is None:
+            return self.create_node(key)
+        if key < node.key:
+            node.left = self.insert(node.left, key)
+        elif key > node.key:
+            node.right = self.insert(node.right, key)
+        return node
+    
     def search_node(self,node,key):
         if node is None:
             return "This node does not exist"
