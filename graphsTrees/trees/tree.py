@@ -1,4 +1,4 @@
-from node import Node 
+from node import Node
 
 class Tree:
    
@@ -8,28 +8,24 @@ class Tree:
     def insert(self, node, key):
         if node is None:
             return self.create_node(key)
-        if key < node.key:
+        else:
             node.left = self.insert(node.left, key)
-        elif key > node.key:
-            node.right = self.insert(node.right, key)
         return node
     
-    def traverse_inorder(self,root):
-        if root is not None:
-            self.traverse_inorder(root.left)
-            print(root.key)
-            self.traverse_inorder(root.right)
+    def inorder(self,node):
+        if node is not None:
+            self.inorder(node.left)
+            print(node.key)
+            self.inorder(node.right)
     
-    def traverse_preorder(self, root):
-        if root is not None:
-            print(root.key)
-            self.traverse_preorder(root.left)
-            self.traverse_preorder(root.right)
+    def preorder(self, node):
+        if node is not None:
+            print(node.key)
+            self.preorder(node.left)
+            self.preorder(node.right)
     
-    def traverse_postorder(self, root):
-        if root is not None: 
-            self.traverse_postorder(root.left)
-            self.traverse_postorder(root.right)
-            print(root.key)
-
-
+    def postorder(self, node):
+        if node is not None: 
+            self.postorder(node.left)
+            self.postorder(node.right)
+            print(node.key)
