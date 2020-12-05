@@ -1,7 +1,7 @@
 # DATA533_Lab2
 Eric Baxter and Aditya Saluja Lab 2
 
-## Graphs Subpackage
+## Graphs Subpackage by Eric
 This sub-package contains two modules, one for un-weighted graphs and one for weighted graphs. 
 
 ### Graphs.py
@@ -72,3 +72,76 @@ kruskal
 totalWeight
 - Input: None
 - Gives the sum of all the weights of a graph| g.totalWeight()
+
+
+## Trees Subpackage by Aditya
+
+This sub-package consists of three modules, node, tree and BST. The package enables the user to implement a generic tree or binary search tree (BST) data structure in Python. 
+
+node.py
+
+This module consists of Node class to be used by both tree and BST classes. The class contains a single constructor method. An object of this class must be instantiated by providing a key value for a node. The value can be of any data type. This class will have three attributes: the node itself and its left and right child. 
+
+tree.py
+
+This module allows a user to implement a generic tree structure. 
+
+Methods:
+
+create_node:
+
+-	Input: key of any datatype 
+-	Creates a node for a tree 
+-	Output: Node object 
+-	Usage: tree.create_node(5)
+
+insert:
+
+-	Input: root_node, key 
+-	The method allows the user to add more nodes to the tree structure. If the tree is empty a new root node is created, and any additional nodes are attached to this root node.
+-	Usage: tree.insert(root_node, 10)
+
+search_node:
+
+-	Input: root_node, key
+-	The method allows the user to search a node. 
+-	Output: A string indicating whether a node exists or not 
+-	Usage: tree.search_node(root_node, 7)
+
+Methods for tree traversal:
+
+Three methods were included for traversing the tree: inorder, preorder and postorder. 
+
+-	Input: root_node
+-	Usage: tree.inorder(root_node)
+
+
+bst.py
+
+This module inherits all methods from Tree class and overrides the insert and search_node methods. The module also adds a method to delete a node from the tree. 
+
+Methods:
+
+create_node:
+
+Similar to create_node method in tree module 
+
+insert_node:
+
+-	Input: root_node, key
+-	The method allows the user to add more nodes to the tree structure. If the tree is empty a new root node is created, and any additional nodes are attached to this root node, such that if the value is lower than the parent node the node is added to the left else to the right. 
+-	Usage: bst.insert(root_node, 9)
+
+search_node:
+-	Input: root_node, key
+-	Similar to search_node method in tree module, however instead of searching the entire tree the method implements binary search algorithm to reduce the time complexity. 
+-	Usage: bst.search_node(root_node, 3)
+
+delete_node:
+-	Input: root_node, key
+-	Deletes a node in bst
+-	Usage: bst.delete_node(root_node, 4)
+
+Methods for tree traversal:
+
+Inherited from the ones included in tree module 
