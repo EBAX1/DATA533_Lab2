@@ -14,7 +14,7 @@ class Tree:
     
     def search_node(self,node,key):
         if node is None:
-            return "This node does not exist"
+            return "Node {} does not exist".format(key)
         if node.key == key:
             return "Node {} exists".format(key)
         else:

@@ -2,39 +2,34 @@
 Eric Baxter and Aditya Saluja Lab 2
 
 ## Graphs Subpackage
-This subpackage contains two modules, one for unweighted graphs and one for weighted graphs. 
-Both are implemented in a user friendly and intuitive way that does not require knowledge of adjacency lists or adjacency matrices.
+This sub-package contains two modules, one for un-weighted graphs and one for weighted graphs. 
 
 ### Graphs.py
 
-Contains the Graph class for unweighted graphs. 
+Contains the Graph class for un-weighted graphs. 
 Inputs:
-- vertices: an integer (n) representing the number of vertices in the graph. vertices will be labelled from 0 to n-1
-- edges: A list of two element lists. Element [i,j] represents an edge from vertex i tp vertex j (unweighted, undirected)
+- vertices: A positive integer n representing the number of vertices in the graph. 
+- edges: A list of two element lists. Element [i,j] represents an edge from vertex i to vertex j (un-weighted, undirected)
 
-Methods:
+The class implements the following methods:
 
 addEdge
 - Input: integers i, j
-- adds an edge from vertex i to vertex j. Fails if there is no vertex i or j
-- Example: G.addEdge(0,2) adds edge from vertex 0 to vertex 2
+- adds an edge from vertex i to vertex j. Raises an error if there is no vertex i or j
+- Usage: g.addEdge(0,4) adds edge from vertex 0 to vertex 4
 
 addVertex
-- Input: None
+- Input: Takes no argument
 - Adds a vertex n to a graph of size n
-- Example: G.addVertex(). If G has 4 vertices [0,1,2,3] will add vertex labelled 4
+- Usage: g.addVertex(). If G has 4 vertices [0,1,2,3] will add vertex labeled 4
 
 rmEdge
 - Input: integers i,j
-- Removes the edge between vetex i and vertex j
-- Example: G.rmEdge(0,1) removes edge between vertex 0 and vertex 1
-
-printGraph
-- Input: None
-- Prints the edge set and vertex set of the graph
+- Removes the edge between vertex i and vertex j
+- Usage: g.rmEdge(1,3) removes edge between vertex 1 and vertex 3
 
 adjMatrix
-- Input: None
+- Input: Takes no argument
 - Returns the adjacency matrix of the graph
 
 DFS
@@ -42,16 +37,20 @@ DFS
 - Performs a depth first search on the graph starting from vertex i
 
 isConnected
-- Input: None
+- Input: Takes no argument
 - Returns True if the graph is connected, false otherwise
 
 hasCycles
-- Input: None
+- Input: Takes no argument
 - Returns True if the graph has cycles, false otherwise
+
+printGraph
+- Input: Takes no argument
+- Prints the edge set and vertex set of the graph
 
 ### wtGraphs.py
 
-Contains the wtGraph class for weighted graphs. Inherits from Graph class
+The module contains the wtGraph class for weighted graphs. Inherits from Graph class
 
 Inputs:
 - vertices: as in Graph
@@ -60,7 +59,7 @@ Inputs:
 
 Methods:
 
-All methods from Graph class
+Inherits all methods from Graph class and adds the following:
 
 adjMatrix
 - Input: None
@@ -68,8 +67,8 @@ adjMatrix
 
 kruskal
 - Input: None
-- Performs Kruskals algorithm for a minimal spanning tree. Returns a list of edges that form this tree
+- Performs Kruskal's algorithm for a minimal spanning tree. Returns a list of edges that form this tree
 
 totalWeight
 - Input: None
-- Gives the sum of all the weights of a graph| G.totalWeight()
+- Gives the sum of all the weights of a graph| g.totalWeight()

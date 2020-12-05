@@ -17,7 +17,7 @@ class BST(Tree):
     
     def search_node(self,node,key):
         if node is None:
-            return "This node does not exist"
+            return "Node {} does not exist".format(key)
         if node.key == key:
             return "Node {} exists".format(key)
         if node.key<key:
@@ -41,3 +41,4 @@ class BST(Tree):
                 swap = node.left
                 del node
                 return swap
+        return node
