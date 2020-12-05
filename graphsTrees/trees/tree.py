@@ -1,4 +1,4 @@
-from node import Node
+from graphsTrees.trees.node import Node
 
 class Tree:
    

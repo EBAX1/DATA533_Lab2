@@ -1,5 +1,5 @@
-from node import Node
-from tree import Tree
+from graphsTrees.trees.node import Node
+from graphsTrees.trees.tree import Tree
 
 class BST(Tree):
     
